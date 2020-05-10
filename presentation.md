@@ -413,7 +413,7 @@ column has replaced `participant_id` (and the `sub-` has been dropped).
 The `'subject'` level shows the subject's `sessions.tsv`:
 
 ```Python
->>> layout.get_collections(level='subject', subject='MSC01')[0].to_df()                    
+>>> layout.get_collections(level='subject', subject='MSC01')[0].to_df()
      session    suffix subject             acq_time
 0     func01  sessions   MSC01  1894-08-25T01:07:51
 1     func02  sessions   MSC01  1894-08-26T00:09:21
@@ -448,7 +448,7 @@ The `'run'` level collects data from `events.tsv`, `*_physio.tsv.gz`, `*_stim.ts
 
 ```Python
 >>> layout.get_collections(level='run', subject='MSC01', session='func01',
-                           task='motor', run=1)[0].to_df()  
+                           task='motor', run=1)[0].to_df()
     task suffix subject  run  duration  onset session datatype trial_type
 0  motor   bold   MSC01    1      15.4    8.8  func01     func      RHand
 1  motor   bold   MSC01    1      15.4   24.2  func01     func      RFoot
@@ -489,7 +489,7 @@ Summaries of the data can also be generated.
 >>> print(reports.most_common()[0][0])
 For session None:
 	MR data were acquired using a 3-Tesla Siemens TrioTim MRI scanner.
-	Zero runs of pixar single-echo fMRI data were collected (32 slices in interleaved descending order; repetition time, TR=2000ms; echo time, TE=30ms; flip angle, FA=90<deg>; field of view, FOV=192x192mm; matrix size=64x64; voxel size=3x3x3.3mm). Each run was 5:36 minutes in length, during which 168 functional volumes were acquired. 
+	Zero runs of pixar single-echo fMRI data were collected (32 slices in interleaved descending order; repetition time, TR=2000ms; echo time, TE=30ms; flip angle, FA=90<deg>; field of view, FOV=192x192mm; matrix size=64x64; voxel size=3x3x3.3mm). Each run was 5:36 minutes in length, during which 168 functional volumes were acquired.
 
 Dicoms were converted to NIfTI-1 format. This section was (in part) generated automatically using pybids (0.10.2).
 ```
@@ -663,6 +663,148 @@ count: false
 .pull-right[
 [![:img BIDS App list, 100%](assets/bids-apps.png)](https://bids-apps.neuroimaging.io/apps/)
 ]
+
+---
+layout: true
+template: footer
+
+# Example: Summarize scan parameters
+
+A [short program](assets/example-bids-app.py) to summarize variations in scan parameters across subjects.
+
+---
+---
+count: false
+
+```Python
+import sys
+from pathlib import Path
+from bids import BIDSLayout
+from bids.reports import BIDSReport
+```
+
+Import some BIDS tools and Python libraries.
+
+---
+count: false
+
+```Python
+import sys
+from pathlib import Path
+from bids import BIDSLayout
+from bids.reports import BIDSReport
+
+cmd, bids_root, out_root, analysis_level, *opts = sys.argv
+layout = BIDSLayout(bids_root)
+```
+
+Collect the command-line arguments to implement the BIDS Apps protocol.
+
+There are libraries to help add options, but this is the heart of it.
+
+---
+count: false
+
+```Python
+import sys
+from pathlib import Path
+from bids import BIDSLayout
+from bids.reports import BIDSReport
+
+cmd, bids_root, out_root, analysis_level, *opts = sys.argv
+layout = BIDSLayout(bids_root)
+
+reports = {}
+for subject in layout.get_subjects():
+    rep = list(BIDSReport(layout).generate(subject=subject))[0]
+    reports.setdefault(rep, []).append(subject)
+```
+
+Generate a report per subject. Add the subject to a list associated with
+report text.
+
+---
+count: false
+
+```Python
+import sys
+from pathlib import Path
+from bids import BIDSLayout
+from bids.reports import BIDSReport
+
+cmd, bids_root, out_root, analysis_level, *opts = sys.argv
+layout = BIDSLayout(bids_root)
+
+reports = {}
+for subject in layout.get_subjects():
+    rep = list(BIDSReport(layout).generate(subject=subject))[0]
+    reports.setdefault(rep, []).append(subject)
+
+with open(Path(out_root) / "report.txt", "w") as out_file:
+    out_file.write(f"Scan parameter sets detected: {len(reports)}\n\n")
+    for rep, subs in reports.items():
+```
+
+Write the number of scans parameter sets to a report file, then
+for each set...
+
+---
+count: false
+
+```Python
+import sys
+from pathlib import Path
+from bids import BIDSLayout
+from bids.reports import BIDSReport
+
+cmd, bids_root, out_root, analysis_level, *opts = sys.argv
+layout = BIDSLayout(bids_root)
+
+reports = {}
+for subject in layout.get_subjects():
+    rep = list(BIDSReport(layout).generate(subject=subject))[0]
+    reports.setdefault(rep, []).append(subject)
+
+with open(Path(out_root) / "report.txt", "w") as out_file:
+    out_file.write(f"Scan parameter sets detected: {len(reports)}\n\n")
+    for rep, subs in reports.items():
+        rep = "\n".join(rep.splitlines()[:-2])
+        out_file.write(f"-----\nParameters for subjects: {', '.join(subs)}\n\n")
+        out_file.write(rep.replace("<deg>", "°") + "\n\n")
+```
+
+... report which subjects had the same parameters, and what they were.
+
+---
+
+To run the app:
+
+```Bash
+python ./example-bids-app.py /data/ds000228 /data/out/ds000228-example group
+```
+
+Output ([download](assets/report.txt)):
+
+```text
+Scan parameter sets detected: 9
+
+-----
+Parameter set detected for subjects: pixar001, pixar002, pixar003, pixar008, pixar009, pixar010, pixar011, pixar013, pixar014, pixar015, pixar016, pixar017, pixar018, pixar020, pixar021, pixar022, pixar023, pixar024, pixar025, pixar026, pixar027, pixar029, pixar030, pixar031
+
+For session None:
+	MR data were acquired using a 3-Tesla Siemens TrioTim MRI scanner.
+	T1-weighted structural MRI data were collected (192 slices; repetition time, TR=2530ms; echo time, TE=1.64ms; flip angle, FA=7°; field of view, FOV=176x192mm; matrix size=176x192; voxel size=1x1x1mm).
+	Zero runs of pixar single-echo fMRI data were collected (32 slices in interleaved descending order; repetition time, TR=2000ms; echo time, TE=30ms; flip angle, FA=90°; field of view, FOV=192x192mm; matrix size=64x64; voxel size=3x3x3.3mm). Each run was 5:36 minutes in length, during which 168 functional volumes were acquired.
+...
+```
+
+--
+
+In a more complicated application, you might modulate processing based on these differences.
+
+---
+layout: true
+template: Apps
 
 ---
 

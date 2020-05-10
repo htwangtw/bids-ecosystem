@@ -1,0 +1,74 @@
+Scan parameter sets detected: 9
+
+-----
+Parameters for subjects: pixar001, pixar002, pixar003, pixar008, pixar009, pixar010, pixar011, pixar013, pixar014, pixar015, pixar016, pixar017, pixar018, pixar020, pixar021, pixar022, pixar023, pixar024, pixar025, pixar026, pixar027, pixar029, pixar030, pixar031
+
+For session None:
+	MR data were acquired using a 3-Tesla Siemens TrioTim MRI scanner.
+	T1-weighted structural MRI data were collected (192 slices; repetition time, TR=2530ms; echo time, TE=1.64ms; flip angle, FA=7°; field of view, FOV=176x192mm; matrix size=176x192; voxel size=1x1x1mm). 
+	Zero runs of pixar single-echo fMRI data were collected (32 slices in interleaved descending order; repetition time, TR=2000ms; echo time, TE=30ms; flip angle, FA=90°; field of view, FOV=192x192mm; matrix size=64x64; voxel size=3x3x3.3mm). Each run was 5:36 minutes in length, during which 168 functional volumes were acquired. 
+
+-----
+Parameters for subjects: pixar004, pixar005, pixar006, pixar007, pixar122
+
+For session None:
+	MR data were acquired using a 3-Tesla Siemens TrioTim MRI scanner.
+	T1-weighted structural MRI data were collected (192 slices; repetition time, TR=2530ms; echo time, TE=1.64ms; flip angle, FA=7°; field of view, FOV=176x192mm; matrix size=176x192; voxel size=1x1x1mm). 
+	Zero runs of pixar single-echo fMRI data were collected (32 slices in interleaved descending order; repetition time, TR=2000ms; echo time, TE=30ms; flip angle, FA=90°; field of view, FOV=192x192mm; matrix size=64x64; voxel size=3x3x3.6mm). Each run was 5:36 minutes in length, during which 168 functional volumes were acquired. 
+
+-----
+Parameters for subjects: pixar012
+
+For session None:
+	MR data were acquired using a 3-Tesla Siemens TrioTim MRI scanner.
+	T1-weighted structural MRI data were collected (192 slices; repetition time, TR=2530ms; echo time, TE=1.64ms; flip angle, FA=7°; field of view, FOV=176x192mm; matrix size=176x192; voxel size=1x1x1mm). 
+	Zero runs of pixar single-echo fMRI data were collected (32 slices in interleaved descending order; repetition time, TR=2000ms; echo time, TE=30ms; flip angle, FA=89°; field of view, FOV=192x192mm; matrix size=64x64; voxel size=3x3x3.3mm). Each run was 5:36 minutes in length, during which 168 functional volumes were acquired. 
+
+-----
+Parameters for subjects: pixar019
+
+For session None:
+	MR data were acquired using a 3-Tesla Siemens TrioTim MRI scanner.
+	T1-weighted structural MRI data were collected (192 slices; repetition time, TR=2530ms; echo time, TE=1.64ms; flip angle, FA=7°; field of view, FOV=176x192mm; matrix size=176x192; voxel size=1x1x1mm). 
+	Zero runs of pixar single-echo fMRI data were collected (32 slices in interleaved descending order; repetition time, TR=2000ms; echo time, TE=30ms; flip angle, FA=84°; field of view, FOV=192x192mm; matrix size=64x64; voxel size=3x3x3.3mm). Each run was 5:36 minutes in length, during which 168 functional volumes were acquired. 
+
+-----
+Parameters for subjects: pixar028
+
+For session None:
+	MR data were acquired using a 3-Tesla Siemens TrioTim MRI scanner.
+	T1-weighted structural MRI data were collected (192 slices; repetition time, TR=2530ms; echo time, TE=1.64ms; flip angle, FA=7°; field of view, FOV=176x192mm; matrix size=176x192; voxel size=1x1x1mm). 
+	Zero runs of pixar single-echo fMRI data were collected (32 slices in interleaved descending order; repetition time, TR=2000ms; echo time, TE=30ms; flip angle, FA=88°; field of view, FOV=192x192mm; matrix size=64x64; voxel size=3x3x3.3mm). Each run was 5:36 minutes in length, during which 168 functional volumes were acquired. 
+
+-----
+Parameters for subjects: pixar032, pixar033, pixar034, pixar035, pixar036, pixar037, pixar038, pixar039, pixar040, pixar041, pixar042, pixar043, pixar044, pixar045, pixar046, pixar047, pixar048, pixar049, pixar050, pixar051, pixar052, pixar053, pixar054, pixar055, pixar056, pixar057, pixar058, pixar059, pixar060, pixar061, pixar062, pixar063, pixar064, pixar065, pixar066, pixar067, pixar068, pixar069, pixar070, pixar071, pixar072, pixar073, pixar074, pixar075, pixar076, pixar077, pixar078, pixar079, pixar080, pixar081, pixar082, pixar083, pixar084, pixar085, pixar086, pixar087, pixar088, pixar089, pixar090, pixar091, pixar092, pixar093, pixar094, pixar095, pixar096
+
+For session None:
+	MR data were acquired using a 3-Tesla Siemens TrioTim MRI scanner.
+	T1-weighted structural MRI data were collected (256 slices; repetition time, TR=2530ms; echo time, TE=1.64ms; flip angle, FA=7°; field of view, FOV=176x256mm; matrix size=176x256; voxel size=1x1x1mm). 
+	Zero runs of pixar single-echo fMRI data were collected (32 slices in interleaved descending order; repetition time, TR=2000ms; echo time, TE=30ms; flip angle, FA=90°; field of view, FOV=192x192mm; matrix size=64x64; voxel size=3x3x3.3mm). Each run was 5:36 minutes in length, during which 168 functional volumes were acquired. 
+
+-----
+Parameters for subjects: pixar097, pixar098, pixar101, pixar102, pixar103, pixar104, pixar105, pixar106, pixar107, pixar108, pixar109, pixar110, pixar111, pixar112, pixar113, pixar114, pixar115, pixar116, pixar117, pixar118, pixar119, pixar120, pixar121, pixar123, pixar124, pixar125, pixar126, pixar127
+
+For session None:
+	MR data were acquired using a 3-Tesla Siemens TrioTim MRI scanner.
+	T1-weighted structural MRI data were collected (256 slices; repetition time, TR=2530ms; echo time, TE=1.64ms; flip angle, FA=7°; field of view, FOV=176x256mm; matrix size=176x256; voxel size=1x1x1mm). 
+	Zero runs of pixar single-echo fMRI data were collected (32 slices in interleaved ascending order; repetition time, TR=2000ms; echo time, TE=30ms; flip angle, FA=90°; field of view, FOV=200x200mm; matrix size=64x64; voxel size=3.12x3.12x3.13mm). Each run was 5:36 minutes in length, during which 168 functional volumes were acquired. 
+
+-----
+Parameters for subjects: pixar099, pixar100
+
+For session None:
+	MR data were acquired using a 3-Tesla Siemens TrioTim MRI scanner.
+	T1-weighted structural MRI data were collected (256 slices; repetition time, TR=2530ms; echo time, TE=1.64ms; flip angle, FA=7°; field of view, FOV=176x256mm; matrix size=176x256; voxel size=1x1x1mm). 
+	Zero runs of pixar single-echo fMRI data were collected (32 slices in interleaved descending order; repetition time, TR=2000ms; echo time, TE=30ms; flip angle, FA=90°; field of view, FOV=192x192mm; matrix size=64x64; voxel size=3x3x3.6mm). Each run was 5:36 minutes in length, during which 168 functional volumes were acquired. 
+
+-----
+Parameters for subjects: pixar128, pixar129, pixar130, pixar131, pixar132, pixar133, pixar134, pixar135, pixar136, pixar137, pixar138, pixar139, pixar140, pixar141, pixar142, pixar143, pixar144, pixar145, pixar146, pixar147, pixar148, pixar149, pixar150, pixar151, pixar152, pixar153, pixar154, pixar155
+
+For session None:
+	MR data were acquired using a 3-Tesla Siemens TrioTim MRI scanner.
+	T1-weighted structural MRI data were collected (256 slices; repetition time, TR=2530ms; echo time, TE=1.64ms; flip angle, FA=7°; field of view, FOV=176x256mm; matrix size=176x256; voxel size=1x1x1mm). 
+	Zero runs of pixar single-echo fMRI data were collected (32 slices in interleaved ascending order; repetition time, TR=2000ms; echo time, TE=30ms; flip angle, FA=90°; field of view, FOV=200x200mm; matrix size=64x64; voxel size=3.12x3.12x3.44mm). Each run was 5:36 minutes in length, during which 168 functional volumes were acquired. 
+
