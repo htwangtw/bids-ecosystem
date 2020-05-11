@@ -811,30 +811,32 @@ template: Apps
 For development and distribution, BIDS Apps encourages a continuous-integration
 (CI) approach.
 
-.center[
-![:img BIDS App creation, 75%](assets/bids-app-creation.png)
-]
-
-.footnote[
-From doi:[10.1371/journal.pcbi.1005209.g001](https://doi.org/10.1371/journal.pcbi.1005209.g001)
-]
+<figure style="width: 75%">
+![:img BIDS App creation, 100%](assets/bids-app-creation.png)
+<figcaption>From doi:![:doi](10.1371/journal.pcbi.1005209.g001)</figcaption>
+</figure>
 
 ---
 
 BIDS Apps use the notion of analysis levels, which provide natural opportunities for
 parallelism.
 
-.center[
+<figure style="width: 100%">
 ![:img BIDS App workflow, 100%](assets/bids-app-workflow.png)
-]
-
-.footnote[
-From doi:[10.1371/journal.pcbi.1005209.g002](https://doi.org/10.1371/journal.pcbi.1005209.g002)
-]
+<figcaption>From doi:![:doi](10.1371/journal.pcbi.1005209.g002)</figcaption>
+</figure>
 
 ---
 
-* Construction of reusable pipelines is important for reproducibility
+Construction of reusable pipelines is important for reproducibility
+
+<figure style="width: 60%; display: block; margin-left: auto; margin-right: auto">
+![:img Reproducibility matrix, 100%](assets/ReproducibleMatrix.jpg)
+<figcaption>From <a href="https://the-turing-way.com/reproducibility/03/definitions.html#The-Turing-Way-definition-of-reproducibility">The
+Turing Way, Ch. 2</a>; doi:![:doi](10.5281/zenodo.3233853)</figcaption>
+</figure>
+
+--
 
   * Open analysis on open data is subject to replication
   * Identical analyses on similar data tests for robustness

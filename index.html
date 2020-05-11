@@ -202,6 +202,19 @@
           position: absolute;
           right: 4em;
       }
+      figure {
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  font-size: 8pt;
+      }
+      figcaption {
+	  text-align: right;
+      }
+      figcaption a {
+        color: #444444;
+        text-decoration: underline dotted;
+      }
     </style>
   </head>
   <body>
@@ -214,6 +227,10 @@
       remark.macros.img = function (altText, width) {
         var url = this;
         return '<img alt="' + altText + '" src="' + url + '" style="width: ' + width + '" />';
+      };
+      remark.macros.doi = function () {
+	var doi = this;
+	return '<a href="https://doi.org/' + doi + '">' + doi + '</a>';
       };
       var slideshow = remark.create({
           highlightStyle: 'monokai',
