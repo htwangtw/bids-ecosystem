@@ -107,6 +107,37 @@ template: footer
 
 ---
 
+# Bidsification
+
+Constructing a BIDS dataset can be tedious and error-prone, so there are several
+[converters](https://bids.neuroimaging.io/benefits.html#converters).
+
+<figure style="width: 60%">
+![:img DICOM to BIDS conversion, 100%](assets/dicom-reorganization-transparent-black_1000x477.png)
+</figure>
+
+DICOM images store their relevant metadata internally, but naming conventions tend
+to be scanner/institution-specific.
+
+The [Heuristic DICOM Converter](https://heudiconv.readthedocs.io/) (HeuDiConv) and
+[bidsify](https://github.com/NILAB-UvA/bidsify) allow you to specify the mapping and
+apply in bulk. Both build off of [dcm2niix](https://github.com/rordenlab/dcm2niix/).
+
+---
+
+# Bidsification: ReproIn
+
+The [ReproIn](https://github.com/ReproNim/reproin) project aims to
+standardize scanner conventions, to eliminate the need to rewrite these mappings.
+
+<figure style="width: 60%">
+![:img ReproIn conversion schema, 100%](assets/dbic-conversions_cropped.png)
+<figcaption>From <a href="https://github.com/ReproNim/reproin/blob/master/README.md#overall-workflow">ReproIn</a>;
+doi:![:doi](10.5281/zenodo.3625000)</figcaption>
+</figure>
+
+---
+
 .install-cmd[
 ```Bash
 npm install -g bids-validator
