@@ -842,10 +842,15 @@ template: Apps
 For development and distribution, BIDS Apps encourages a continuous-integration
 (CI) approach.
 
-<figure style="width: 75%">
+<figure style="width: 70%">
 ![:img BIDS App creation, 100%](assets/bids-app-creation.png)
 <figcaption>From doi:![:doi](10.1371/journal.pcbi.1005209.g001)</figcaption>
 </figure>
+
+--
+
+The uniform interface also eases deployment to HPC or cloud environments like
+[CBRAIN](http://mcin.ca/technology/cbrain/) or [AWS Batch](https://aws.amazon.com/batch/).
 
 ---
 
@@ -867,7 +872,7 @@ template: footer
 
 Start-to-finish pipelines aid in performing *reproducible* analyses.
 
-<figure style="width: 60%; display: block; margin-left: auto; margin-right: auto">
+<figure style="width: 60%">
 ![:img Reproducibility matrix, 100%](assets/ReproducibleMatrix.jpg)
 <figcaption>From <a href="https://the-turing-way.netlify.app/reproducibility/03/definitions.html#The-Turing-Way-definition-of-reproducibility">The
 Turing Way, Ch. 2</a>; doi:![:doi](10.5281/zenodo.3233853)</figcaption>
@@ -883,26 +888,35 @@ Accepting BIDS datasets makes *replicating* results on independent data easier.
 
 ---
 
-* Container technologies partially address environmental sources of
-  variability &mdash; see, *e.g.*,
+<figure style="width: 28%; margin-right: 0; margin-top: -1em;">
+![:img Reproducibility matrix, 100%](assets/ReproducibleMatrix.jpg)
+<figcaption>From <a href="https://the-turing-way.netlify.app/reproducibility/03/definitions.html#The-Turing-Way-definition-of-reproducibility">The
+Turing Way, Ch. 2</a>; doi:![:doi](10.5281/zenodo.3233853)</figcaption>
+</figure>
+
+Reusable code is only one part of reproducibility. Does it always produce the
+same result?
+
+Sources of variability:
+
+* Operating system (version) &mdash; see, *e.g.*,
   [Gronenschild, et al. (2012)](https://doi.org/10.1371/journal.pone.0038234
    "The Effects of FreeSurfer Version, Workstation Type, and Macintosh Operating
    System Version on Anatomical Volume and Cortical Thickness Measurements")
-  or [Glatard, et al. (2015)](https://doi.org/10.3389/fninf.2015.00012
+* Dependency versions &mdash; see, *e.g.*,
+  [Glatard, et al. (2015)](https://doi.org/10.3389/fninf.2015.00012
    "Reproducibility of neuroimaging analyses across operating systems")
+* Stochastic (random) components
 
 --
 
-* The uniform interface also eases deployment to HPC or cloud environments
-  like [CBRAIN](http://mcin.ca/technology/cbrain/) or
-  [AWS Batch](https://aws.amazon.com/batch/).
+Container technnologies partially address environmental sources of variability.
+The [Neurodocker](https://github.com/ReproNim/neurodocker) project aims to
+make the creation of consistent environments simpler.
 
 --
 
-* The output of a BIDS App is a *derivative* dataset. The BIDS standard is
-[being extended](https://bids-specification.readthedocs.io/en/derivatives/05-derivatives/01-introduction.html)
-to describe many types of derivatives, with a focus on derivatives that
-can be reused in yet more BIDS apps.
+Tools for quantifying run-to-run reproducibility are in progress.
 
 ---
 layout: true
@@ -913,6 +927,13 @@ name: Derivatives
 
 ---
 
+The output of a BIDS App is a *derivative* dataset. The BIDS standard is
+[being extended](https://bids-specification.readthedocs.io/en/derivatives/05-derivatives/01-introduction.html)
+to describe many types of derivatives, with a focus on derivatives that
+can be reused in yet more BIDS apps.
+
+
+--
 
 #### Dataset-level metadata is stored in augmented [`dataset_description.json`](https://bids-specification.readthedocs.io/en/derivatives/05-derivatives/01-introduction.html#derived-dataset-and-pipeline-description):
 
@@ -933,10 +954,8 @@ fmriprep/sub-01/func/sub-01_task-rest_space-fsaverage_hemi-L.func.gii
 
 #### Additional metadata in [sidecar JSON files](https://bids-specification.readthedocs.io/en/derivatives/05-derivatives/01-introduction.html#common-file-level-metadata-fields)
 
-* `Sources` direct inputs to the process that produced the file
-* `CoordinateSystem` indicates the coordinate system of image files
-* Metadata of source files that still apply should be preserved
-* Metadata of source files that no longer apply must be removed
+* `Sources`: input files to the process that produced the file
+* `SpatialReference`: structural images/surfaces needed for interpretation
 
 ---
 
@@ -961,9 +980,21 @@ Derivatives generally fall into three categories:
 
 3. Figures and reports for assessing the quality of data/processing
 
-  * Surface reconstruction plots
-  * Brain-extraction mask overlays
-  * Susceptibility distortion correction before/after
+---
+layout: true
+template: footer
+
+# Case Study: FitLins
+
+---
+
+---
+layout: true
+template: footer
+
+# Case Study: ~~FitLins~~ Neuroscout
+
+---
 
 ---
 template: footer
