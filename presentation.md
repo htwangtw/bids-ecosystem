@@ -1,6 +1,6 @@
 class: center middle
 
-# BIDS Ecosystem
+# The BIDS Ecosystem
 ### Christopher J. Markiewicz
 #### Center for Reproducible Neuroscience
 #### Stanford University
@@ -827,21 +827,30 @@ parallelism.
 </figure>
 
 ---
+layout: true
+template: footer
 
-Construction of reusable pipelines is important for reproducibility
+# BIDS Apps and Reproducibility
+
+---
+
+Start-to-finish pipelines aid in performing *reproducible* analyses.
 
 <figure style="width: 60%; display: block; margin-left: auto; margin-right: auto">
 ![:img Reproducibility matrix, 100%](assets/ReproducibleMatrix.jpg)
-<figcaption>From <a href="https://the-turing-way.com/reproducibility/03/definitions.html#The-Turing-Way-definition-of-reproducibility">The
+<figcaption>From <a href="https://the-turing-way.netlify.app/reproducibility/03/definitions.html#The-Turing-Way-definition-of-reproducibility">The
 Turing Way, Ch. 2</a>; doi:![:doi](10.5281/zenodo.3233853)</figcaption>
 </figure>
 
 --
 
-  * Open analysis on open data is subject to replication
-  * Identical analyses on similar data tests for robustness
+Open analysis on open data is subject to independent reproduction.
 
 --
+
+Accepting BIDS datasets makes *replicating* results on independent data easier.
+
+---
 
 * Container technologies partially address environmental sources of
   variability &mdash; see, *e.g.*,
