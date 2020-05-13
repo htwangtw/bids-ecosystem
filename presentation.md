@@ -275,7 +275,7 @@ A full list of possible entities can be found:
 
 # PyBIDS - Metadata queries
 
-BIDS has [The Inheritance Principle](https://bids-specification.readthedocs.io/en/v1.3.0/02-common-principles.html#the-inheritance-principle):
+BIDS specifies the [Inheritance Principle](https://bids-specification.readthedocs.io/en/v1.3.0/02-common-principles.html#the-inheritance-principle):
 
 > Any metadata file [...] may be defined at any directory level [...]. The values from the top level are inherited by all lower levels unless they are overridden by a file at the lower level.
 
@@ -1272,6 +1272,8 @@ template: footer
   * Chris Markiewicz, Alejandro de la Vega, Dylan Nielson, et al.
 * Neuroscout
   * Alejandro de la Vega, Tal Yarkoni, Ross Blair, et al.
+* Neurdocker
+  * Jakub Kaczmarzyk, et al.
 * Datalad
   * Yaroslav Halchenko, Michael Hanke, et al.
 * Nipype
