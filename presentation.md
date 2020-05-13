@@ -550,6 +550,12 @@ the new structure.
 By standardizing on a data structure, code written to that structure gains stability and
 broad applicability.
 
+--
+
+<hr>
+
+[BIDS-MATLAB](https://github.com/bids-standard/bids-matlab) is a similar project for MATLAB / Octave
+
 
 ---
 class: center middle
@@ -1227,8 +1233,6 @@ template: footer
 --
 
 * PyBIDS provides programmatic access to files and metadata in BIDS datasets
-  * [BIDS for MATLAB / Octave](https://github.com/bids-standard/bids-matlab) is a related project
-    for those languages
 
 --
 
@@ -1248,6 +1252,26 @@ template: footer
 
 * A growing ecosystem makes it worthwhile to produce tools that can take advantage of open
   datasets and derivatives.
+
+---
+
+# Credits
+
+* BIDS
+  * The BIDS community (~120 named contributors)
+  * Prime movers: Chris Gorgolewski, Russ Poldrack
+* PyBIDS
+  * Tal Yarkoni + 44 named contributors
+* FitLins
+  * Chris Markiewicz, Alejandro de la Vega, Dylan Nielson, et al.
+* Neuroscout
+  * Alejandro de la Vega, Tal Yarkoni, Ross Blair, et al.
+* Datalad
+  * Yaroslav Halchenko, Michael Hanke, et al.
+* Nipype
+  * Satra Ghosh, Oscar Esteban, et al.
+* fMRIPrep
+  * Oscar Esteban, Mathias Goncalves + ~45 named contributors
 
 ---
 
