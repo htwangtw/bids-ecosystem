@@ -552,6 +552,11 @@ broad applicability.
 
 
 ---
+class: center middle
+
+# Break (?)
+
+---
 layout: true
 template: footer
 name: Apps
@@ -981,12 +986,129 @@ Derivatives generally fall into three categories:
 3. Figures and reports for assessing the quality of data/processing
 
 ---
+template: footer
+class: center middle
+
+# Break (?)
+
+---
 layout: true
 template: footer
+name: FitLins
+
+.install-cmd[
+```Bash
+pip install fitlins
+```
+]
 
 # Case Study: FitLins
 
 ---
+layout: true
+template: FitLins
+
+## FitLins is a BIDS-aware GLM-estimation framework
+
+FitLins takes as inputs:
+
+---
+
+* A BIDS dataset - task *events*, physiological *time series*, etc.
+.center[
+![:img BIDS, 12%](assets/bids_raw.png)
+]
+
+---
+count: false
+
+* A BIDS dataset - task *events*, physiological *time series*, etc.
+* BIDS Derivatives - preprocessed *BOLD series*, confound *time series*, etc.
+.center[
+![:img Preprocessing, 50%](assets/preprocessing.svg)
+]
+
+---
+count: false
+
+* A BIDS dataset - task *events*, physiological *time series*, etc.
+* BIDS Derivatives - preprocessed *BOLD series*, confound *time series*, etc.
+* A BIDS statistical model - a JSON structure for constructing design matrices and contrasts
+
+.center[
+![:img Generate design matrix, 50%](assets/generate_design_matrix.svg)
+]
+
+---
+count: false
+
+* A BIDS dataset - task *events*, physiological *time series*, etc.
+* BIDS Derivatives - preprocessed *BOLD series*, confound *time series*, etc.
+* A BIDS statistical model - a JSON structure for constructing design matrices and contrasts
+
+It then uses [Nistats](https://nistats.github.io/) (now part of
+[Nilearn](https://nilearn.github.io/)) to estimate responses to conditions of interest.
+
+.center[
+![:img Estimate GLM, 50%](assets/glm.svg)
+]
+
+---
+count: false
+
+* A BIDS dataset - task *events*, physiological *time series*, etc.
+* BIDS Derivatives - preprocessed *BOLD series*, confound *time series*, etc.
+* A BIDS statistical model - a JSON structure for constructing design matrices and contrasts
+
+It then uses [Nistats](https://nistats.github.io/) (now part of
+[Nilearn](https://nilearn.github.io/)) to estimate responses to conditions of interest.
+
+Usage:
+```Bash
+$ fitlins data/ output/ dataset \
+    --derivatives preprocessed_data/ \
+    --model model-label_smdl.json
+```
+
+([Example report](assets/docs/_static/reports/model-ds003Model001.html))
+
+---
+layout: true
+template: FitLins
+
+---
+
+## In one slide
+
+Take the inputs:
+
+```Bash
+fitlins data/ output/ dataset --derivatives derivs/ --model model.json
+```
+
+--
+
+FitLins does the following:
+
+```Python
+layout = bids.BIDSLayout("data/", derivatives=["derivs/"])
+analysis = bids.analysis.Analysis(model="model.json", layout=layout)
+analysis.setup()
+images = layout.get(desc="preproc", suffix="bold", extension=["nii", "nii.gz"])
+for steps in analysis.steps:
+    # Exact details of fit depend on level
+    images = [fit(img, dm)
+              for img, dm in zip(images, step.get_design_matrix())]
+```
+
+--
+
+The rest\* is all book-keeping.
+
+.footnote[
+\* For the interested, the [Nipype](https://nipype.readthedocs.io) library is used to organize
+and execute the entire procedure.
+]
 
 ---
 layout: true
@@ -994,21 +1116,170 @@ template: footer
 
 # Case Study: ~~FitLins~~ Neuroscout
 
----
+.footnote[
+The Neuroscout section of the presentation borrows liberally from Alejandro de la Vega's
+[2019 presentation at OHBM](https://www.pathlms.com/ohbm/courses/12238/sections/15845/video_presentations/138230).
+]
 
 ---
-template: footer
 
-# Conclusion
+[Neuroscout](https://neuroscout.org) is a web-based platform for fast and flexible analysis of
+fMRI data.
 
+--
+
+## Open, naturalistic datasets
+
+.right-column-inv[
+![:img Movies, 100%](assets/neuroscout_datasets.svg)
+]
+
+* [Healthy Brain Network](https://fcon_1000.projects.nitrc.org/indi/cmi_healthy_brain_network/) (*Alexander et al., 2017*)
+* [Life Documentary](https://datasets.datalad.org/?dir=/labs/haxby/life) (*Nastase et al., 2017*)
+* [StudyForrest](http://studyforrest.org) (*Hanke et al., 2014*)
+* [LearningTemporalStructure](https://openneuro.org/datasets/ds001545) (*Aly et al., 2018*)
+* [ParanoiaStory](https://openneuro.org/datasets/ds001338) (*Finn et al., 2018*)
+* [Raiders](https://github.com/HaxbyLab/raiders_data) (*Haxby et al., 2011*)
+* ...
+
+--
+
+All datasets are available in BIDS format and accessible via [Datalad](https://www.datalad.org/),
+and preprocessed with [fMRIPrep](https://fmriprep.readthedocs.io).
+
+---
+
+## Automatically-generated annotations
+
+In typical fMRI studies, subjects engage in discrete events that can be modeled.
+
+To analyze passive audiovisual tasks, the stimulus must be annotated for possible features of
+interest, as well as potential confounds.
+
+[pliers](https://github.com/tyarkoni/pliers) is a Python library to extract features:
+
+* Visual
+  * Faces: location, parts, emotion
+  * Scene labeling (e.g., "building", "vehicle", "room")
+  * Low-level statistics (e.g., brightness, colors, optical flow, etc.)
+* Auditory
+  * Speech (e.g., word identity, frequency, sentiment, part of speech)
+  * Low-level statistics (e.g., loudness, frequencies, etc.)
+
+---
+
+![:video 100%](assets/neuroscout1.mov)
+
+---
+
+![:video 100%](assets/neuroscout2.mov)
+
+---
+
+## Automated data retrieval and modeling
+
+![:img Analysis passed, 100%](assets/neuroscout_cli.png)
+
+--
+
+![:img CLI workflow, 100%](assets/neuroscout_box.png)
+
+---
+
+.pull-left[
+## Example results
+
+![:img Results, 60%](assets/neuroscout_results.png)
+]
+
+--
+
+## So what is this?
+
+Neuroscout allows for *rapid hypothesis generation*, and testing these hypotheses
+on several, large, independently collected datasets.
+
+--
+
+This is possible because researchers at many universities are willing
+to share large amounts of (expensive) data, freely.
+
+--
+
+Crucially, they shared these data as **BIDS** datasets
+--
+, which can be processed with **BIDS Apps** like fMRIPrep
+--
+, producing **BIDS Derivatives**
+--
+, which can be analyzed with further BIDS Apps like FitLins.
 
 ---
 layout: true
 template: footer
 
-class: center middle
+---
+
+# Conclusion
+
+* BIDS is a standard for organizing neuroimaging data and metadata
+
+--
+
+* PyBIDS provides programmatic access to files and metadata in BIDS datasets
+  * [BIDS for MATLAB / Octave](https://github.com/bids-standard/bids-matlab) is a related project
+    for those languages
+
+--
+
+* BIDS Apps use a common protocol to process datasets, improving interoperability and
+  facilitating reproducibility.
+
+--
+
+* BIDS Derivatives are processed datasets that can be queried like BIDS datasets, enabling
+  higher-order applications.
+
+--
+
+* Apps incentivize using BIDS, datasets incentivize writing apps.
+
+--
+
+* A growing ecosystem makes it worthwhile to produce tools that can take advantage of open
+  datasets and derivatives.
 
 ---
+
+# Resources
+
+.left-column-mid[
+* [BIDS](https://bids.neuroimaging.io)
+   * [Starter Kit](https://github.com/bids-standard/bids-starter-kit)
+   * [Specification](https://bids-standard.rtfd.io)
+   * [Extension proposals](https://bids.neuroimaging.io/get_involved.html#extending-the-bids-specification)
+      * [BEP002](https://bids.neuroimaging.io/bep002): Stats Models
+      * [BEP003](https://bids-specification.readthedocs.io/en/derivatives/05-derivatives/01-introduction.html): Derivatives
+* [BIDS Validator](https://bids-standard.github.io/bids-validator)
+* [BIDS Converters](https://bids.neuroimaging.io/benefits.html#converters)
+   * [dcm2niix](https://github.com/rordenlab/dcm2niix/)
+   * [HeuDiConv](https://heudiconv.readthedocs.io/)
+   * [bidsify](https://github.com/NILAB-UvA/bidsify)
+* [PyBIDS](https://github.com/bids-standard/pybids)
+   * [Tutorial](https://mybinder.org/v2/gh/bids-standard/pybids/master?filepath=examples%2Fpybids_tutorial.ipynb)
+* [BIDS Apps](https://bids-apps.neuroimaging.io/)
+   * [Paper](https://doi.org/10.1371/journal.pcbi.1005209)
+]
+.right-column-mid[
+* [ReproNim](https://www.repronim.org/)
+   * [ReproIn](https://github.com/ReproNim/reproin)
+   * [Neurodocker](https://github.com/ReproNim/neurodocker)
+* [The Turing Way](https://the-turing-way.netlify.app/)
+* [CBRAIN](http://mcin.ca/technology/cbrain/)
+]
+
+---
+class: center middle
 
 # Questions?
 

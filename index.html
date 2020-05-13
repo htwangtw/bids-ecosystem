@@ -176,15 +176,14 @@
       /* Two-column layout (flipped) */
       .left-column-inv {
         color: #777;
-        width: 75%;
-        height: 92%;
+        width: 66%;
         float: left;
       }
         .left-column h2:last-of-type, .left-column h3:last-child {
           color: #000;
         }
       .right-column-inv {
-        width: 20%;
+        width: 30%;
         float: right;
         padding-top: 1em;
       }
@@ -228,6 +227,12 @@
         var url = this;
         return '<img alt="' + altText + '" src="' + url + '" style="width: ' + width + '" />';
       };
+      // Use: ![:video](10.5129/10234)
+      remark.macros.video = function (width) {
+        var url = this;
+        return '<video src="' + url + '" width="' + width + '" preload="auto" controls />';
+      };
+      // Use: ![:doi](10.5129/10234)
       remark.macros.doi = function () {
 	var doi = this;
 	return '<a href="https://doi.org/' + doi + '">' + doi + '</a>';
