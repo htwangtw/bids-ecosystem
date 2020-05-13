@@ -897,6 +897,10 @@ Open analysis on open data is subject to independent reproduction.
 
 Accepting BIDS datasets makes *replicating* results on independent data easier.
 
+--
+
+A common interface also makes independent analyses easier to write and compare.
+
 ---
 
 <figure style="width: 28%; margin-right: 0; margin-top: -1em;">
@@ -1162,6 +1166,8 @@ In typical fMRI studies, subjects engage in discrete events that can be modeled.
 To analyze passive audiovisual tasks, the stimulus must be annotated for possible features of
 interest, as well as potential confounds.
 
+--
+
 [pliers](https://github.com/tyarkoni/pliers) is a Python library to extract features:
 
 * Visual
@@ -1228,11 +1234,11 @@ template: footer
 
 # Conclusion
 
-* BIDS is a standard for organizing neuroimaging data and metadata
+* BIDS is a standard for organizing neuroimaging data and metadata.
 
 --
 
-* PyBIDS provides programmatic access to files and metadata in BIDS datasets
+* PyBIDS provides programmatic access to files and metadata in BIDS datasets.
 
 --
 
