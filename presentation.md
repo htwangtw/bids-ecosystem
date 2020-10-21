@@ -11,13 +11,13 @@ class: center middle
 name: footer
 layout: true
 
-<div class="slide-slug">BIDS Ecosystem - Neuro Data Science School - May 2020</div>
+<div class="slide-slug">BIDS Ecosystem - Martinos fMRI Workshop - Oct 2020</div>
 
 ---
 
 # Outline
 
-1. BIDS Review
+1. BIDS Overview
 
 2. BIDS Validator
 
@@ -952,7 +952,7 @@ can be reused in yet more BIDS apps.
 
 #### Dataset-level metadata is stored in augmented [`dataset_description.json`](https://bids-specification.readthedocs.io/en/derivatives/05-derivatives/01-introduction.html#derived-dataset-and-pipeline-description):
 
-* `PipelineDescription` contains references to the code (including version)
+* `GeneratedBy` contains references to the code (including version)
   that produced the derivative dataset.
 * `SourceDatasets` is a list of references to the specific version of the
   dataset analyzed
@@ -962,7 +962,7 @@ can be reused in yet more BIDS apps.
 #### Basic metadata remains in filenames
 
 ```
-fmriprep/sub-01/func/sub-01_task-rest_space-fsaverage_hemi-L.func.gii
+fmriprep/sub-01/func/sub-01_task-rest_space-fsaverage_hemi-L_bold.func.gii
 ```
 
 --
