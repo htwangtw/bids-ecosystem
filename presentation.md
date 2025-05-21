@@ -1287,18 +1287,20 @@ template: footer
 .left-column-mid[
 * [BIDS](https://bids.neuroimaging.io)
    * [Starter Kit](https://github.com/bids-standard/bids-starter-kit)
-   * [Specification](https://bids-standard.rtfd.io)
+   * [Specification](https://bids-specification.readthedocs.io/en/stable/)
    * [Extension proposals](https://bids.neuroimaging.io/get_involved.html#extending-the-bids-specification)
-      * [BEP002](https://bids.neuroimaging.io/bep002): Stats Models
-      * [BEP003](https://bids-specification.readthedocs.io/en/derivatives/05-derivatives/01-introduction.html): Derivatives
-* [BIDS Validator](https://bids-standard.github.io/bids-validator)
-* [BIDS Converters](https://bids.neuroimaging.io/benefits.html#converters)
+      * [BEP002](https://bids-standard.github.io/stats-models/): Stats Models
+      * [BEP003](https://bids-specification.readthedocs.io/en/stable/derivatives/introduction.html): Derivatives
+      * [BEP017](https://bids.neuroimaging.io/extensions/beps/bep_017.html): Connectomes
+* [BIDS Validator](https://bids.neuroimaging.io/tools/validator.html)
+* [BIDS Converters](https://bids.neuroimaging.io/tools/index.html#converters)
    * [dcm2niix](https://github.com/rordenlab/dcm2niix/)
    * [HeuDiConv](https://heudiconv.readthedocs.io/)
    * [bidsify](https://github.com/NILAB-UvA/bidsify)
+   * [dcm2bids]((https://unfmontreal.github.io/Dcm2Bids/3.2.0/))
 * [PyBIDS](https://github.com/bids-standard/pybids)
    * [Tutorial](https://mybinder.org/v2/gh/bids-standard/pybids/master?filepath=examples%2Fpybids_tutorial.ipynb)
-* [BIDS Apps](https://bids-apps.neuroimaging.io/)
+* [BIDS Apps](https://bids.neuroimaging.io//tools/bids-apps.html)
    * [Paper](https://doi.org/10.1371/journal.pcbi.1005209)
 ]
 .right-column-mid[
@@ -1314,4 +1316,4 @@ class: center middle
 
 # Questions?
 
-##### [effigies.github.io/bids-ecosystem](https://effigies.github.io/bids-ecosystem)
+###### [wanghaoting.com/bids-ecosystem](https://wanghaoting.com/bids-ecosystem/)
