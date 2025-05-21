@@ -1,17 +1,16 @@
 class: center middle
 
 # The BIDS Ecosystem
-### Christopher J. Markiewicz
-#### Center for Reproducible Neuroscience
-#### Stanford University
+### Hao-Ting Wang
+#### CRIUGM
 
-###### [effigies.github.io/bids-ecosystem](https://effigies.github.io/bids-ecosystem)
+###### [wanghaoting.com/bids-ecosystem](https://wanghaoting.com/bids-ecosystem/)
 
 ---
 name: footer
 layout: true
 
-<div class="slide-slug">BIDS Ecosystem - Martinos fMRI Workshop - Oct 2020</div>
+<div class="slide-slug">BIDS Ecosystem - Brainhack School Montreal 2025</div>
 
 ---
 
@@ -21,13 +20,13 @@ layout: true
 
 2. BIDS Validator
 
-3. PyBIDS
+3. BIDS-Apps
 
-4. BIDS-Apps
+4. Derivatives
 
-5. Derivatives
+5. PyBIDS
 
-6. Case Study: FitLins/Neuroscout
+6. Case Study: Giga-connectome
 
 ---
 layout: true
@@ -119,7 +118,7 @@ Constructing a BIDS dataset can be tedious and error-prone, so there are several
 DICOM images store their relevant metadata internally, but naming conventions tend
 to be scanner/institution-specific.
 
-The [Heuristic DICOM Converter](https://heudiconv.readthedocs.io/) (HeuDiConv) and
+The [Heuristic DICOM Converter](https://heudiconv.readthedocs.io/) (HeuDiConv), [dcm2bids](https://unfmontreal.github.io/Dcm2Bids/3.2.0/) and
 [bidsify](https://github.com/NILAB-UvA/bidsify) allow you to specify the mapping and
 apply in bulk. Both build off of [dcm2niix](https://github.com/rordenlab/dcm2niix/).
 
