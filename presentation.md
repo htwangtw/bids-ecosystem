@@ -109,14 +109,23 @@ template: footer
 # Anatomy of the BIDS file name
 
 * `[entitykey1]-entityValue_[entitykey2]-entityIndex_[suffix].[fileextension]`
-  * Entity: `key-<index>` or `key-<label>`
-    * Name: A comprehensive name describing the context of information to be provided via the entity.
-    * Key: A short string, typically a compression of the entity name, which uniquely identifies the entity when part of a filename.
-    * Value type: The requisite form of the value that gets specified alongside the key whenever the entity appears in a filename. For each entity, the value is of one of two possible types:
-      * Index: A non-negative integer, potentially zero-padded for consistent width.
-      * Label: An alphanumeric string. Note that labels MUST not collide when casing is ignored.
-  * File extension - A portion of the filename after the left-most period (`.`) preceded by any other alphanumeric.
+  * Entities - `key-<index>` or `key-<label>`, separated by `_`
   * suffix - An alphanumeric string that forms part of a filename, located after all entities and following a final `_`, right before the file extension.
+  * File extension - A portion of the filename after the left-most period (`.`) preceded by any other alphanumeric.
+
+---
+
+# What is a BIDS entity
+
+A BIDS entity contains 3 elements.
+
+* Name: i.e. "subject".
+* Key: A short string, typically a compression of the entity name, i.e. `sub`.
+* Value type: The requisite form of the value that gets specified alongside the key whenever the entity appears in a filename. 
+  * Index: A non-negative integer, potentially zero-padded for consistent width.
+  * Label: An alphanumeric string. Note that labels MUST not collide when casing is ignored.
+
+There should be no connectors such as `_`, `-`, `.` in the key or value.
 
 ---
 
