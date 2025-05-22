@@ -104,7 +104,7 @@ count: false
 
 # Anatomy of the BIDS file name
 
-* [entitykey1]-entityValueOrIndex1_[entitykey2]-entityValueOrIndex2_[suffix].[fileextension]
+* `[entitykey1]-entityValue_[entitykey2]-entityIndex_[suffix].[fileextension]`
   * Entity: `key-<index>` or `key-<label>`
     * Name: A comprehensive name describing the context of information to be provided via the entity.
     * Key: A short string, typically a compression of the entity name, which uniquely identifies the entity when part of a filename.
