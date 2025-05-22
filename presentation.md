@@ -101,6 +101,20 @@ count: false
 ]
 
 ---
+
+# Anatomy of the BIDS file name
+
+* [entitykey1]-entityValueOrIndex1_[entitykey2]-entityValueOrIndex2_[suffix].[fileextension]
+  * Entity: `key-<index>` or `key-<label>`
+    * Name: A comprehensive name describing the context of information to be provided via the entity.
+    * Key: A short string, typically a compression of the entity name, which uniquely identifies the entity when part of a filename.
+    * Value type: The requisite form of the value that gets specified alongside the key whenever the entity appears in a filename. For each entity, the value is of one of two possible types:
+      * Index: A non-negative integer, potentially zero-padded for consistent width.
+      * Label: An alphanumeric string. Note that labels MUST not collide when casing is ignored.
+  * File extension - A portion of the filename after the left-most period (`.`) preceded by any other alphanumeric.
+  * suffix - An alphanumeric string that forms part of a filename, located after all entities and following a final `_`, right before the file extension.
+
+---
 layout: true
 template: footer
 
