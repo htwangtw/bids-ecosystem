@@ -245,7 +245,7 @@ fmriprep /data/bids/openneuro/ds000228 /data/processed/ds000228-fmriprep \
 ### Many application types are possible
 ]
 .pull-right[
-[![:img BIDS App list, 100%](assets/bids-apps.png)](https://bids-apps.neuroimaging.io/apps/)
+[![:img BIDS App list, 60%](assets/bids-apps.png)](https://bids-apps.neuroimaging.io/apps/)
 ]
 
 ---
@@ -258,7 +258,7 @@ count: false
 
 ]
 .pull-right[
-[![:img BIDS QC Apps, 100%](assets/bids-apps-qc.png)](https://bids-apps.neuroimaging.io/apps/)
+[![:img BIDS QC Apps, 60%](assets/bids-apps-qc.png)](https://bids-apps.neuroimaging.io/apps/)
 ]
 
 ---
@@ -273,7 +273,7 @@ count: false
 
 ]
 .pull-right[
-[![:img BIDS Anatomical Apps, 100%](assets/bids-apps-anatomical.png)](https://bids-apps.neuroimaging.io/apps/)
+[![:img BIDS Anatomical Apps, 60%](assets/bids-apps-anatomical.png)](https://bids-apps.neuroimaging.io/apps/)
 ]
 
 ---
@@ -290,7 +290,7 @@ count: false
 
 ]
 .pull-right[
-[![:img BIDS Functional Apps, 100%](assets/bids-apps-functional.png)](https://bids-apps.neuroimaging.io/apps/)
+[![:img BIDS Functional Apps, 60%](assets/bids-apps-functional.png)](https://bids-apps.neuroimaging.io/apps/)
 ]
 
 ---
@@ -309,7 +309,7 @@ count: false
 
 ]
 .pull-right[
-[![:img BIDS Diffusion Apps, 100%](assets/bids-apps-diffusion.png)](https://bids-apps.neuroimaging.io/apps/)
+[![:img BIDS Diffusion Apps, 60%](assets/bids-apps-diffusion.png)](https://bids-apps.neuroimaging.io/apps/)
 ]
 
 ---
@@ -335,7 +335,7 @@ count: false
 
 ]
 .pull-right[
-[![:img BIDS App list, 100%](assets/bids-apps.png)](https://bids-apps.neuroimaging.io/apps/)
+[![:img BIDS App list, 60%](assets/bids-apps.png)](https://bids-apps.neuroimaging.io/apps/)
 ]
 
 ---
