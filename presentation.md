@@ -555,7 +555,8 @@ template: footer
 
 .install-cmd[
 ```Bash
-datalad install https://github.com/OpenNeuroDerivatives/ds000228-fmriprep.git
+datalad install \\ 
+  https://github.com/OpenNeuroDerivatives/ds000228-fmriprep.git
 ```
 ]
 
@@ -578,6 +579,12 @@ layout = BIDSLayout(
 .footnote[
 \* We will talk about what are derivatives in the next section.
 ]
+
+---
+
+layout: true
+template: footer
+
 ---
 
 # PyBIDS - Final thoughts
