@@ -310,7 +310,7 @@ count: false
 
 ]
 .pull-right[
-[![:img BIDS App list, 60%](assets/bids-apps.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
+[![:img BIDS App list, 80%](assets/bids-apps.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
 ]
 
 ---
@@ -335,7 +335,7 @@ count: false
 
 ]
 .pull-right[
-[![:img BIDS App derivative list, 60%](assets/bids-apps-derivatives.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
+[![:img BIDS App derivative list, 80%](assets/bids-apps-derivatives.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
 ]
 
 ---
@@ -367,7 +367,7 @@ count: false
 
 ]
 .pull-right[
-[![:img BIDS App derivative list, 60%](assets/bids-apps-derivatives.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
+[![:img BIDS App derivative list, 80%](assets/bids-apps-derivatives.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
 ]
 
 ---
@@ -518,7 +518,7 @@ For development and distribution, BIDS Apps encourages a continuous-integration
 (CI) approach.
 
 <figure style="width: 70%">
-![:img BIDS App creation, 100%](assets/bids-app-creation.png)
+![:img BIDS App creation, 80%](assets/bids-app-creation.png)
 <figcaption>From doi:![:doi](10.1371/journal.pcbi.1005209.g001)</figcaption>
 </figure>
 
