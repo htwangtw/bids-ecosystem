@@ -553,16 +553,24 @@ Dicoms were converted to NIfTI-1 format. This section was (in part) generated au
 layout: true
 template: footer
 
-.install-cmd[
+---
+
+# PyBIDS - Index derivatives \*
+
+Some Open Neuro datasets are preprocessed by fMRIPrep.
+
 ```Bash
 datalad install \\ 
   https://github.com/OpenNeuroDerivatives/ds000228-fmriprep.git
 ```
+
+.footnote[
+\* We will talk about what are derivatives in the later section.
 ]
 
----
+--
 
-# PyBIDS - Index derivatives \*
+You can index it with `pybids`:
 
 ```python
 from bids import BIDSLayout
@@ -576,14 +584,28 @@ layout = BIDSLayout(
 # and you can do any query
 ```
 
-.footnote[
-\* We will talk about what are derivatives in the next section.
-]
+--
+
+*  `BIDSReport` will not work....
 
 ---
 
-layout: true
-template: footer
+# PyBIDS - Models
+
+[New functionality](https://bids-standard.github.io/pybids/analysis/index.html) 
+built on [BIDS Models specification](https://bids-standard.github.io/model-zoo/)
+
+--
+
+What can `pybids.modeling` do: 
+  * Automatic loading and transformation of all variables
+  * The construction of design matrices and contrasts
+
+--
+
+You will need other libraies to run the model.
+  * Python library: nilearn
+  * a non-Python package like FSL or SPM via Nipype
 
 ---
 
@@ -1103,7 +1125,8 @@ name: giga-connectome
 
 .install-cmd[
 ```Bash
-apptainer build giga_connectome.simg docker://bids/giga_connectome:latest
+apptainer build giga_connectome.simg \\
+  docker://bids/giga_connectome:latest
 ```
 ]
 
@@ -1116,6 +1139,9 @@ template: giga-connectome
 ## Giga Connectome is post-`fmriprpe` BIDS App
 
 Giga Connectome takes inputs from BIDS-derivative `fMRIPrep`.
+The output of this app aims to follow the guideline of the 
+[BIDS extension proposal (BEP) 17](https://bids.neuroimaging.io/bep017): 
+Generic BIDS connectivity data schema.
 
 ---
 
@@ -1125,193 +1151,41 @@ Giga Connectome takes inputs from BIDS-derivative `fMRIPrep`.
 ]
 
 ---
+
 count: false
 
 * BIDS Derivatives - preprocessed *BOLD series*, confound *time series*, etc.
 * Atlas in `TemplateFlow` format (optional).
+* Denoise stategy customisation.
 
 .center[
-![:img Generate design matrix, 40%](assets/generate_design_matrix.svg)
+![:img giga-connectome workflow, 40%](assets/giga-connectome.png)
 ]
 
 ---
+
 count: false
 
 * BIDS Derivatives - preprocessed *BOLD series*, confound *time series*, etc.
-* A BIDS statistical model - a JSON structure for constructing design matrices and contrasts
-
-It then uses [Nistats](https://nistats.github.io/) (now part of
-[Nilearn](https://nilearn.github.io/)) to estimate responses to conditions of interest.
+* Atlas in `TemplateFlow` format (optional).
+* Denoise stategy customisation.
 
 .center[
-![:img Estimate GLM, 40%](assets/glm.svg)
+![:img giga-connectome workflow, 40%](assets/giga-connectome.png)
 ]
 
----
-count: false
+* Processing backend: `nilearn`
 
-* BIDS Derivatives - preprocessed *BOLD series*, confound *time series*, etc.
-* A BIDS statistical model - a JSON structure for constructing design matrices and contrasts
-
-It then uses [Nistats](https://nistats.github.io/) (now part of
-[Nilearn](https://nilearn.github.io/)) to estimate responses to conditions of interest.
-
-Usage:
-```Bash
-$ fitlins data/ output/ dataset \
-    --derivatives preprocessed_data/ \
-    --model model-label_smdl.json
-```
-
-([Example report](assets/docs/_static/reports/model-ds003Model001.html))
-
----
-layout: true
-template: FitLins
-
----
-
-## In one slide
-
-Take the inputs:
-
-```Bash
-fitlins data/ output/ dataset --derivatives derivs/ --model model.json
-```
-
---
-
-FitLins does the following:
-
-```Python
-layout = bids.BIDSLayout("data/", derivatives=["derivs/"])
-analysis = bids.analysis.Analysis(model="model.json", layout=layout)
-analysis.setup()
-images = layout.get(desc="preproc", suffix="bold", extension=["nii", "nii.gz"])
-for steps in analysis.steps:
-    # Exact details of fit depend on level
-    images = [fit(img, dm)
-              for img, dm in zip(images, step.get_design_matrix())]
-```
-
---
-
-The rest\* is all book-keeping.
-
-.footnote[
-\* For the interested, the [Nipype](https://nipype.readthedocs.io) library is used to organize
-and execute the entire procedure.
-]
 
 ---
 layout: true
 template: footer
 
-# Case Study: ~~FitLins~~ Neuroscout
-
-.footnote[
-The Neuroscout section of the presentation borrows liberally from Alejandro de la Vega's
-[2019 presentation at OHBM](https://www.pathlms.com/ohbm/courses/12238/sections/15845/video_presentations/138230).
-]
-
 ---
 
-[Neuroscout](https://neuroscout.org) is a web-based platform for fast and flexible analysis of
-fMRI data.
+# Case Study: FitLin and NeuroScout
 
---
-
-## Open, naturalistic datasets
-
-.right-column-inv[
-![:img Movies, 90%](assets/neuroscout_datasets.svg)
-]
-
-* [Healthy Brain Network](https://fcon_1000.projects.nitrc.org/indi/cmi_healthy_brain_network/) (*Alexander et al., 2017*)
-* [Life Documentary](https://datasets.datalad.org/?dir=/labs/haxby/life) (*Nastase et al., 2017*)
-* [StudyForrest](http://studyforrest.org) (*Hanke et al., 2014*)
-* [LearningTemporalStructure](https://openneuro.org/datasets/ds001545) (*Aly et al., 2018*)
-* [ParanoiaStory](https://openneuro.org/datasets/ds001338) (*Finn et al., 2018*)
-* [Raiders](https://github.com/HaxbyLab/raiders_data) (*Haxby et al., 2011*)
-* ...
-
---
-
-All datasets are available in BIDS format and accessible via [Datalad](https://www.datalad.org/),
-and preprocessed with [fMRIPrep](https://fmriprep.readthedocs.io).
-
----
-
-## Automatically-generated annotations
-
-In typical fMRI studies, subjects engage in discrete events that can be modeled.
-
-To analyze passive audiovisual tasks, the stimulus must be annotated for possible features of
-interest, as well as potential confounds.
-
---
-
-[pliers](https://github.com/tyarkoni/pliers) is a Python library to extract features:
-
-* Visual
-  * Faces: location, parts, emotion
-  * Scene labeling (e.g., "building", "vehicle", "room")
-  * Low-level statistics (e.g., brightness, colors, optical flow, etc.)
-* Auditory
-  * Speech (e.g., word identity, frequency, sentiment, part of speech)
-  * Low-level statistics (e.g., loudness, frequencies, etc.)
-
----
-
-![:video 80%](assets/neuroscout1.mov)
-
----
-
-![:video 80%](assets/neuroscout2.mov)
-
----
-
-## Automated data retrieval and modeling
-
-![:img Analysis passed, 80%](assets/neuroscout_cli.png)
-
---
-
-![:img CLI workflow, 80%](assets/neuroscout_box.png)
-
----
-
-.pull-left[
-## Example results
-
-![:img Results, 40%](assets/neuroscout_results.png)
-]
-
---
-
-## So what is this?
-
-Neuroscout allows for *rapid hypothesis generation*, and testing these hypotheses
-on several, large, independently collected datasets.
-
---
-
-This is possible because researchers at many universities are willing
-to share large amounts of (expensive) data, freely.
-
---
-
-Crucially, they shared these data as **BIDS** datasets
---
-, which can be processed with **BIDS Apps** like fMRIPrep
---
-, producing **BIDS Derivatives**
---
-, which can be analyzed with further BIDS Apps like FitLins.
-
----
-layout: true
-template: footer
+See [the previous version of this presentations](https://effigies.github.io/bids-ecosystem/#72).
 
 ---
 
