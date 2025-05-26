@@ -291,7 +291,7 @@ count: false
 
 ]
 .pull-right[
-[![:img BIDS App list, 80%](assets/bids-apps.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
+[![:img BIDS App list, 60%](assets/bids-apps.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
 ]
 
 ---
@@ -310,7 +310,7 @@ count: false
 
 ]
 .pull-right[
-[![:img BIDS App list, 80%](assets/bids-apps.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
+[![:img BIDS App list, 60%](assets/bids-apps.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
 ]
 
 ---
@@ -331,7 +331,7 @@ count: false
 
 ]
 .pull-right[
-[![:img BIDS App derivative list, 80%](assets/bids-apps-derivatives.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
+[![:img BIDS App derivative list, 60%](assets/bids-apps-derivatives.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
 ]
 
 .footnote[
@@ -363,7 +363,7 @@ count: false
 
 ]
 .pull-right[
-[![:img BIDS App derivative list, 80%](assets/bids-apps-derivatives.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
+[![:img BIDS App derivative list, 60%](assets/bids-apps-derivatives.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
 ]
 
 .footnote[
