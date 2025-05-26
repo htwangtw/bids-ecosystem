@@ -154,7 +154,7 @@ The [ReproIn](https://github.com/ReproNim/reproin) project aims to
 standardize scanner conventions, to eliminate the need to rewrite these mappings.
 
 <figure style="height: 60%">
-![:img ReproIn conversion schema, 100%](assets/dbic-conversions_cropped.png)
+![:img ReproIn conversion schema, 70%](assets/dbic-conversions_cropped.png)
 <figcaption>From <a href="https://github.com/ReproNim/reproin/blob/master/README.md#overall-workflow">ReproIn</a>;
 doi:![:doi](10.5281/zenodo.3625000)</figcaption>
 </figure>
@@ -209,7 +209,7 @@ adaptation to the available data.
 --
 
 Queryable (meta)data allows a very simple protocol for a
-[BIDS App](https://bids-apps.neuroimaging.io/apps/):
+[BIDS App](https://bids.neuroimaging.io//tools/bids-apps.html):
 
 ```Bash
 bids-app /bids-directory /output-directory participant [OPTIONS]
@@ -224,28 +224,29 @@ at the `run`, `session` or `group` levels.
 
 ## Examples
 
-**MRIQC**
-
-```Bash
-mriqc /data/bids/openneuro/ds000228 /data/processed/ds000228-mriqc group
-```
-
---
-
-**fMRIPrep**
+**fMRIPrep**: work on raw BIDS dataset
 
 ```Bash
 fmriprep /data/bids/openneuro/ds000228 /data/processed/ds000228-fmriprep \
     participant --participant-label pixar001
 ```
 
+--
+
+**giga-connectome**: work on BIDS-derivative (fMRIPrep)
+
+```Bash
+giga_connectome /data/processed/ds000228-fmriprep /data/processed/ds000228-giga-connectome \
+    participant --atlas MIST --denoise-strategy simple+gsr --participant-label pixar001
+```
+
 ---
 
 .pull-left[
 ### Many application types are possible
 ]
 .pull-right[
-[![:img BIDS App list, 60%](assets/bids-apps.png)](https://bids-apps.neuroimaging.io/apps/)
+[![:img BIDS App list, 60%](assets/bids-apps.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
 ]
 
 ---
@@ -258,7 +259,7 @@ count: false
 
 ]
 .pull-right[
-[![:img BIDS QC Apps, 60%](assets/bids-apps-qc.png)](https://bids-apps.neuroimaging.io/apps/)
+[![:img BIDS App list, 60%](assets/bids-apps.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
 ]
 
 ---
@@ -273,7 +274,7 @@ count: false
 
 ]
 .pull-right[
-[![:img BIDS Anatomical Apps, 60%](assets/bids-apps-anatomical.png)](https://bids-apps.neuroimaging.io/apps/)
+[![:img BIDS App list, 60%](assets/bids-apps.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
 ]
 
 ---
@@ -290,7 +291,26 @@ count: false
 
 ]
 .pull-right[
-[![:img BIDS Functional Apps, 60%](assets/bids-apps-functional.png)](https://bids-apps.neuroimaging.io/apps/)
+[![:img BIDS App list, 60%](assets/bids-apps.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
+]
+
+---
+count: false
+
+.pull-left[
+### Many application types are possible
+
+* Quality control
+
+* Anatomical pipelines
+
+* Functional pipelines
+
+* Diffusion pipelines
+
+]
+.pull-right[
+[![:img BIDS App list, 60%](assets/bids-apps.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
 ]
 
 ---
@@ -307,9 +327,15 @@ count: false
 
 * Diffusion pipelines
 
+* Derivative pipelines\*
+
+.footnote[
+\* We will talk about what are derivatives in the next section.
+]
+
 ]
 .pull-right[
-[![:img BIDS Diffusion Apps, 60%](assets/bids-apps-diffusion.png)](https://bids-apps.neuroimaging.io/apps/)
+[![:img BIDS App derivative list, 60%](assets/bids-apps-derivatives.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
 ]
 
 ---
@@ -325,6 +351,8 @@ count: false
 * Functional pipelines
 
 * Diffusion pipelines
+
+* Derivative pipelines\*
 
 ### Lowered friction encourages adoption
 
@@ -333,9 +361,13 @@ count: false
 
 * Accepting BIDS datasets makes your tools easy to try
 
+.footnote[
+\* We will talk about what are derivatives in the next section.
+]
+
 ]
 .pull-right[
-[![:img BIDS App list, 60%](assets/bids-apps.png)](https://bids-apps.neuroimaging.io/apps/)
+[![:img BIDS App derivative list, 60%](assets/bids-apps-derivatives.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
 ]
 
 ---
@@ -1036,27 +1068,18 @@ pip install fitlins
 ```
 ]
 
-# Case Study: FitLins
+# Case Study: Giga Connectome
 
 ---
 layout: true
-template: FitLins
+template: giga-connectome
 
-## FitLins is a BIDS-aware GLM-estimation framework
+## Giga Connectome is post-`fmriprpe` workflow
 
-FitLins takes as inputs:
-
----
-
-* A BIDS dataset - task *events*, physiological *time series*, etc.
-.center[
-![:img BIDS, 8%](assets/bids_raw.png)
-]
+Giga Connectome takes inputs from BIDS-derivative fMRIPrep
 
 ---
-count: false
 
-* A BIDS dataset - task *events*, physiological *time series*, etc.
 * BIDS Derivatives - preprocessed *BOLD series*, confound *time series*, etc.
 .center[
 ![:img Preprocessing, 40%](assets/preprocessing.svg)
@@ -1065,7 +1088,6 @@ count: false
 ---
 count: false
 
-* A BIDS dataset - task *events*, physiological *time series*, etc.
 * BIDS Derivatives - preprocessed *BOLD series*, confound *time series*, etc.
 * A BIDS statistical model - a JSON structure for constructing design matrices and contrasts
 
@@ -1076,7 +1098,6 @@ count: false
 ---
 count: false
 
-* A BIDS dataset - task *events*, physiological *time series*, etc.
 * BIDS Derivatives - preprocessed *BOLD series*, confound *time series*, etc.
 * A BIDS statistical model - a JSON structure for constructing design matrices and contrasts
 
@@ -1090,7 +1111,6 @@ It then uses [Nistats](https://nistats.github.io/) (now part of
 ---
 count: false
 
-* A BIDS dataset - task *events*, physiological *time series*, etc.
 * BIDS Derivatives - preprocessed *BOLD series*, confound *time series*, etc.
 * A BIDS statistical model - a JSON structure for constructing design matrices and contrasts
 
