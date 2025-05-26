@@ -332,11 +332,13 @@ count: false
 ]
 .pull-right[
 [![:img BIDS App derivative list, 60%](assets/bids-apps-derivatives.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
-]
 
 .footnote[
 \* We will talk about what are derivatives in the next section.
 ]
+
+]
+
 
 ---
 count: false
@@ -364,10 +366,10 @@ count: false
 ]
 .pull-right[
 [![:img BIDS App derivative list, 60%](assets/bids-apps-derivatives.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
-]
 
 .footnote[
 \* We will talk about what are derivatives in the next section.
+]
 ]
 
 ---
