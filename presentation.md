@@ -5,7 +5,7 @@ class: center middle
 #### CRIUGM
 
 ###### [wanghaoting.com/bids-ecosystem](https://wanghaoting.com/bids-ecosystem/)
-
+###### Updated from [effigies.github.io/bids-ecosystem](https://effigies.github.io/bids-ecosystem/)
 ---
 name: footer
 layout: true
@@ -515,7 +515,7 @@ template: footer
 
 Start-to-finish pipelines aid in performing *reproducible* analyses.
 
-<figure style="width: 60%">
+<figure style="width: 50%">
 ![:img Reproducibility matrix, 100%](assets/ReproducibleMatrix.jpg)
 <figcaption>From <a href="https://the-turing-way.netlify.app/reproducibility/03/definitions.html#The-Turing-Way-definition-of-reproducibility">The
 Turing Way, Ch. 2</a>; doi:![:doi](10.5281/zenodo.3233853)</figcaption>
@@ -1050,7 +1050,7 @@ FitLins takes as inputs:
 
 * A BIDS dataset - task *events*, physiological *time series*, etc.
 .center[
-![:img BIDS, 12%](assets/bids_raw.png)
+![:img BIDS, 8%](assets/bids_raw.png)
 ]
 
 ---
@@ -1059,7 +1059,7 @@ count: false
 * A BIDS dataset - task *events*, physiological *time series*, etc.
 * BIDS Derivatives - preprocessed *BOLD series*, confound *time series*, etc.
 .center[
-![:img Preprocessing, 50%](assets/preprocessing.svg)
+![:img Preprocessing, 40%](assets/preprocessing.svg)
 ]
 
 ---
@@ -1070,7 +1070,7 @@ count: false
 * A BIDS statistical model - a JSON structure for constructing design matrices and contrasts
 
 .center[
-![:img Generate design matrix, 50%](assets/generate_design_matrix.svg)
+![:img Generate design matrix, 40%](assets/generate_design_matrix.svg)
 ]
 
 ---
@@ -1084,7 +1084,7 @@ It then uses [Nistats](https://nistats.github.io/) (now part of
 [Nilearn](https://nilearn.github.io/)) to estimate responses to conditions of interest.
 
 .center[
-![:img Estimate GLM, 50%](assets/glm.svg)
+![:img Estimate GLM, 40%](assets/glm.svg)
 ]
 
 ---
@@ -1165,7 +1165,7 @@ fMRI data.
 ## Open, naturalistic datasets
 
 .right-column-inv[
-![:img Movies, 100%](assets/neuroscout_datasets.svg)
+![:img Movies, 90%](assets/neuroscout_datasets.svg)
 ]
 
 * [Healthy Brain Network](https://fcon_1000.projects.nitrc.org/indi/cmi_healthy_brain_network/) (*Alexander et al., 2017*)
@@ -1204,28 +1204,28 @@ interest, as well as potential confounds.
 
 ---
 
-![:video 100%](assets/neuroscout1.mov)
+![:video 80%](assets/neuroscout1.mov)
 
 ---
 
-![:video 100%](assets/neuroscout2.mov)
+![:video 80%](assets/neuroscout2.mov)
 
 ---
 
 ## Automated data retrieval and modeling
 
-![:img Analysis passed, 100%](assets/neuroscout_cli.png)
+![:img Analysis passed, 80%](assets/neuroscout_cli.png)
 
 --
 
-![:img CLI workflow, 100%](assets/neuroscout_box.png)
+![:img CLI workflow, 80%](assets/neuroscout_box.png)
 
 ---
 
 .pull-left[
 ## Example results
 
-![:img Results, 60%](assets/neuroscout_results.png)
+![:img Results, 40%](assets/neuroscout_results.png)
 ]
 
 --
