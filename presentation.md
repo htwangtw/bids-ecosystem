@@ -153,11 +153,13 @@ Both build off of [dcm2niix](https://github.com/rordenlab/dcm2niix/).
 The [ReproIn](https://github.com/ReproNim/reproin) project aims to
 standardize scanner conventions, to eliminate the need to rewrite these mappings.
 
-<figure style="height: 60%">
-![:img ReproIn conversion schema, 50%](assets/dbic-conversions_cropped.png)
-<figcaption>From <a href="https://github.com/ReproNim/reproin/blob/master/README.md#overall-workflow">ReproIn</a>;
-doi:![:doi](10.5281/zenodo.3625000)</figcaption>
-</figure>
+.center[
+  <figure style="height: 60%">
+  ![:img ReproIn conversion schema, 50%](assets/dbic-conversions_cropped.png)
+  <figcaption>From <a href="https://github.com/ReproNim/reproin/blob/master/README.md#overall-workflow">ReproIn</a>;
+  doi:![:doi](10.5281/zenodo.3625000)</figcaption>
+  </figure>
+]
 
 ---
 
