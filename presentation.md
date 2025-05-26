@@ -1158,28 +1158,18 @@ Generic BIDS connectivity data schema.
 
 --
 
-* BIDS Derivatives - preprocessed *BOLD series*, confound *time series*, etc.
 * Atlas in `TemplateFlow` format (optional).
 * Denoise stategy customisation.
 
-.center[
-![:img giga-connectome workflow, 20%](assets/giga-connectome.png)
-]
-
----
-
-count: false
-
-* BIDS Derivatives - preprocessed *BOLD series*, confound *time series*, etc.
-* Atlas in `TemplateFlow` format (optional).
-* Denoise stategy customisation.
-
-.center[
-![:img giga-connectome workflow, 40%](assets/giga-connectome.png)
-]
+--
 
 * Processing backend: `nilearn`
 
+---
+
+.center[
+![:img giga-connectome workflow, 60%](assets/giga-connectome.png)
+]
 
 ---
 layout: true
