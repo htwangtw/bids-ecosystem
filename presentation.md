@@ -291,7 +291,7 @@ count: false
 
 ]
 .pull-right[
-[![:img BIDS App list, 60%](assets/bids-apps.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
+[![:img BIDS App list, 80%](assets/bids-apps.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
 ]
 
 ---
@@ -329,13 +329,13 @@ count: false
 
 * Derivative pipelines\*
 
-.footnote[
-\* We will talk about what are derivatives in the next section.
-]
-
 ]
 .pull-right[
 [![:img BIDS App derivative list, 80%](assets/bids-apps-derivatives.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
+]
+
+.footnote[
+\* We will talk about what are derivatives in the next section.
 ]
 
 ---
@@ -361,13 +361,13 @@ count: false
 
 * Accepting BIDS datasets makes your tools easy to try
 
-.footnote[
-\* We will talk about what are derivatives in the next section.
-]
-
 ]
 .pull-right[
 [![:img BIDS App derivative list, 80%](assets/bids-apps-derivatives.png)](https://bids.neuroimaging.io//tools/bids-apps.html)
+]
+
+.footnote[
+\* We will talk about what are derivatives in the next section.
 ]
 
 ---
