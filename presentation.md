@@ -560,8 +560,7 @@ template: footer
 Some Open Neuro datasets are preprocessed by fMRIPrep.
 
 ```Bash
-datalad install \\ 
-  https://github.com/OpenNeuroDerivatives/ds000228-fmriprep.git
+datalad install https://github.com/OpenNeuroDerivatives/ds000228-fmriprep.git
 ```
 
 .footnote[
@@ -592,7 +591,9 @@ layout = BIDSLayout(
 
 # PyBIDS - Models
 
-[New functionality](https://bids-standard.github.io/pybids/analysis/index.html) 
+--
+
+This is a [new functionality](https://bids-standard.github.io/pybids/analysis/index.html) 
 built on [BIDS Models specification](https://bids-standard.github.io/model-zoo/)
 
 --
@@ -1133,33 +1134,36 @@ apptainer build giga_connectome.simg \\
 # Case Study: Giga Connectome
 
 ---
+
 layout: true
 template: giga-connectome
 
+---
+
 ## Giga Connectome is post-`fmriprpe` BIDS App
+
+--
 
 Giga Connectome takes inputs from BIDS-derivative `fMRIPrep`.
 The output of this app aims to follow the guideline of the 
 [BIDS extension proposal (BEP) 17](https://bids.neuroimaging.io/bep017): 
 Generic BIDS connectivity data schema.
 
----
+--
 
 * BIDS Derivatives - preprocessed *BOLD series*, confound *time series*, etc.
 .center[
 ![:img Preprocessing, 40%](assets/preprocessing.svg)
 ]
 
----
-
-count: false
+--
 
 * BIDS Derivatives - preprocessed *BOLD series*, confound *time series*, etc.
 * Atlas in `TemplateFlow` format (optional).
 * Denoise stategy customisation.
 
 .center[
-![:img giga-connectome workflow, 40%](assets/giga-connectome.png)
+![:img giga-connectome workflow, 20%](assets/giga-connectome.png)
 ]
 
 ---
