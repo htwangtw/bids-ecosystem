@@ -101,22 +101,30 @@ count: false
 ]
 
 ---
-layout: true
-template: footer
 
----
-
-# Anatomy of the BIDS file name
+.pull-left[
+#### Anatomy of the BIDS file name
 
 * `[entitykey1]-entityValue_[entitykey2]-entityIndex_[suffix].[fileextension]`
   * Entities - `key-<index>` or `key-<label>`, separated by `_`
   * suffix - An alphanumeric string that forms part of a filename, located after all entities and following a final `_`, right before the file extension.
   * File extension - A portion of the filename after the left-most period (`.`) preceded by any other alphanumeric.
+]
 
 ---
 
-# What is a BIDS entity
+count: false
 
+.pull-left[
+#### Anatomy of the BIDS file name
+
+* `[entitykey1]-entityValue_[entitykey2]-entityIndex_[suffix].[fileextension]`
+  * Entities - `key-<index>` or `key-<label>`, separated by `_`
+  * suffix - An alphanumeric string that forms part of a filename, located after all entities and following a final `_`, right before the file extension.
+  * File extension - A portion of the filename after the left-most period (`.`) preceded by any other alphanumeric.
+]
+
+.pull-right[
 A BIDS entity contains 3 elements.
 
 * Name: i.e. "subject".
@@ -126,6 +134,7 @@ A BIDS entity contains 3 elements.
   * Label: An alphanumeric string. Note that labels MUST not collide when casing is ignored.
 
 There should be no connectors such as `_`, `-`, `.` in the key or value.
+]
 
 ---
 
